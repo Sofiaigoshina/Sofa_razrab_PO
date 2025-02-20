@@ -1,0 +1,128 @@
+body {
+    background-color: #4A90E2;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    background-color: #fff;
+    color: #4A90E2;
+    border: 1px solid #4A90E2;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.tab:hover {
+    background-color: #4A90E2;
+    color: #fff;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.task span {
+    flex-grow: 1;
+}
+
+button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #357ABD;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.5);
+    color: #333;
+}
+
+.circle-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    margin-right: 10px;
+}
+
+.star-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.star-btn.starred {
+    color: yellow; /* Когда задача добавлена в "Мой день", звездочка будет желтой */
+}
+
+.star-btn:hover {
+    color: gold;
+}
+.starred {
+    color: yellow;
+}
+
+button {
+    margin-left: 5px;
+    cursor: pointer;
+}
+/* Стили для завершенных задач */
+.circle-btn.completed {
+   /* Желтый цвет для завершенных задач */
+    color: black;
+}
+
+.completed-text {
+    text-decoration: line-through; /* Зачеркнутый текст */
+    color: rgba(255, 255, 255, 0.5); /* Более бледный цвет текста */
+}
