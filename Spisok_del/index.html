@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список дел</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo/sss.png" type="image/png">
+</head>
+<body>
+
+<div class="main-container">
+    <div class="todo-container">
+        <h1>Список дел</h1>
+        <div class="input-area-wrapper">
+            <div class="input-container">
+                <input type="text" id="taskInput" placeholder="Введите задачу..." />
+                <div class="input-icon-container">
+                    <span class="icon calendar-icon" id="calendarIcon" title="Выбрать срок выполнения">📅</span>
+                    <span class="icon reminder-icon" id="reminderIcon" title="Установить напоминание">🔔</span>
+                </div>
+                <button id="addTaskBtn">Добавить</button>
+            </div>
+            <div class="date-badges-container">
+                <span id="selectedDateDisplay" class="date-badge"></span>
+                <span id="selectedReminderDisplay" class="date-badge reminder-badge"></span>
+            </div>
+        </div>
+
+        <div class="task-lists">
+            <div class="list-header">
+                <h2>Активные задачи</h2>
+                <select id="taskFilterSelect">
+                    <option value="all">Все</option>
+                    <option value="today">На сегодня</option>
+                    <option value="week">На эту неделю</option>
+                    <option value="month">На этот месяц</option>
+                    <option value="year">На этот год</option>
+                    <!-- Добавляем опцию для кастомного фильтра -->
+                    <option value="custom">Выбранный диапазон</option>
+                </select>
+            </div>
+            <div id="taskList" class="task-list"></div>
+
+            <h2>Завершенные задачи</h2>
+            <div id="completedTaskList" class="task-list"></div>
+        </div>
+    </div>
+
+    <div class="calendar-sidebar">
+        <div class="calendar-header">
+            <h2>Календарь</h2>
+        </div>
+        <div id="mainCalendar"></div>
+        
+        <!-- Кнопка сброса выделения по центру -->
+    <div style="text-align: center; margin: 15px 0;">
+        <button id="resetSelectionBtn" class="reset-btn">Сбросить выделение</button>
+    </div>
+
+        <div class="theme-switcher-container">
+            <span class="theme-label">Светлая</span>
+            <label class="theme-switch" for="themeSwitchCheckbox">
+                <input type="checkbox" id="themeSwitchCheckbox">
+                <span class="slider round"></span>
+            </label>
+            <span class="theme-label">Тёмная</span>
+        </div>
+    
+        <div class="progress-section">
+        <h3>Общий прогресс</h3>
+        <div class="progress-container">
+            <div class="progress-bar-outer" id="progressBarOuter">
+                <div class="progress-bar-inner" id="progressBarInner"></div>
+            </div>
+            <span class="progress-percentage" id="progressPercentage">0%</span>
+        </div>
+    </div>
+</div>
+
+<div id="datePickerModal" class="modal hidden">
+    <div class="modal-content">
+        <h2>Срок выполнения</h2>
+        <div id="datePickerCalendar"></div>
+        <div class="time-picker-container">
+            <label for="taskTimeInput">Время (можно не устанавливать):</label>
+            <input type="time" id="taskTimeInput">
+        </div>
+        <div class="modal-buttons">
+            <button id="cancelDateBtn">Отменить</button>
+            <button id="saveDateBtn">Сохранить</button>
+        </div>
+    </div>
+</div>
+
+<div id="reminderDatePickerModal" class="modal hidden">
+    <div class="modal-content">
+        <h2>Установить напоминание</h2>
+        <div id="reminderDatePickerCalendar"></div>
+        <div class="time-picker-container">
+            <div>
+                <label for="reminderTimeInput">Время:</label>
+                <input type="time" id="reminderTimeInput" required>
+            </div>
+            <div>
+                <label for="reminderFrequency">Частота:</label>
+                <select id="reminderFrequency">
+                    <option value="once" selected>Один раз</option>
+                    <option value="daily">Ежедневно</option>
+                    <option value="weekly">Еженедельно</option>
+                    <option value="monthly">Ежемесячно</option>
+                    <option value="yearly">Ежегодно</option>
+                </select>
+            </div>
+        </div>
+        <div class="modal-buttons">
+            <button id="cancelReminderDateBtn">Отменить</button>
+            <button id="saveReminderDateBtn">Сохранить</button>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

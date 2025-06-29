@@ -1,0 +1,1145 @@
+/* 1. CSS переменные (Светлая тема - Сине-голубая палитра) */
+:root {
+    /* Фоны */
+    --bg-color: #edf2f7; /* Общий фон страницы */
+    --container-bg: #ffffff; /* Фон основных контейнеров */
+    --input-bg: #ffffff; /* Фон полей ввода */
+    --today-bg: #e0f2fe; /* Фон сегодняшнего дня в календаре (кружок) */
+    --day-hover-bg: #dbeafe; /* Фон дня при наведении в календаре */
+    --button-secondary-bg: #e2e8f0; /* Фон вторичных кнопок (Отмена) */
+    --button-secondary-hover-bg: #cbd5e1; /* Фон вторичных кнопок при наведении */
+    --progress-bar-outer-bg: #e2e8f0; /* Фон внешнего контейнера прогресс-бара */
+    --filter-highlight-bg: #bfdbfe; /* Фон для выделения диапазона фильтра в календаре (светло-синий) */
+
+    /* Текст */
+    --text-color: #1a202c; /* Основной цвет текста */
+    --secondary-text-color: #4a5568; /* Вторичный цвет текста (заголовки секций, метки) */
+    --disabled-text-color: #a0aec0; /* Цвет неактивного текста/иконок */
+    --completed-text-color: #718096; /* Цвет зачеркнутого текста завершенной задачи */
+    --button-primary-text: #ffffff; /* Цвет текста на основной кнопке */
+    --button-secondary-text: #2d3748; /* Цвет текста на вторичной кнопке */
+    --selected-day-text: #ffffff; /* Цвет текста на выбранном дне в календаре */
+    --accent-contrast-text: #1e3a8a; /* Контрастный текст для фона диапазона (темно-синий) */
+    --link-color: #3182ce; /* Цвет ссылок и кнопок навигации календаря */
+
+    /* Границы */
+    --border-color: #e2e8f0; /* Основной цвет границ */
+    --input-border: #cbd5e1; /* Цвет границы полей ввода */
+
+    /* Акцентные цвета (Синий) */
+    --accent-color: #3182ce; /* Основной акцентный цвет (рамка при фокусе, чекбокс) */
+    --accent-color-translucent: rgba(49, 130, 206, 0.3); /* Для тени фокуса */
+    --button-primary-bg: #3182ce; /* Фон основных кнопок (Добавить, Сохранить) */
+    --button-primary-hover-bg: #2b6cb0; /* Фон основных кнопок при наведении */
+    --selected-day-bg: var(--button-primary-bg); /* Фон выбранного дня в календаре (кружок) */
+    --has-tasks-dot-color: var(--accent-color); /* Цвет точки под датой с задачами */
+    --progress-bar-inner-bg: var(--accent-color); /* Цвет заполнения прогресс-бара */
+
+    /* Другие цвета */
+    --reminder-icon-color: #0ea5e9; /* Цвет иконки напоминания */
+    --reminder-date-bg: #cffafe; /* Фон бэджа даты напоминания */
+    --reminder-date-text: #0e7490; /* Текст бэджа даты напоминания */
+    --due-date-bg: #dbeafe; /* Фон бэджа даты выполнения (светло-синий) */
+    --due-date-text: #1e40af; /* Текст бэджа даты выполнения (темно-синий) */
+    --completed-date-bg: #f1f5f9; /* Фон бэджа даты завершения */
+    --completed-date-text: var(--completed-text-color); /* Текст бэджа даты завершения */
+    --star-color: #a0aec0; /* Цвет неактивной звезды */
+    --starred-color: #f59e0b; /* Цвет активной звезды (желтый/золотой) */
+    --delete-color: #e53e3e; /* Цвет кнопки удаления */
+    --delete-hover-color: #c53030; /* Цвет кнопки удаления при наведении */
+
+    /* Тени, оверлеи, скроллбар */
+    --container-shadow: rgba(0, 0, 0, 0.08); /* Тень контейнеров */
+    --modal-overlay-bg: rgba(0, 0, 0, 0.5); /* Фон оверлея модального окна */
+    --scrollbar-thumb-bg: #cbd5e1; /* Цвет ползунка скроллбара */
+    --scrollbar-track-bg: var(--bg-color); /* Цвет трека скроллбара */
+    --transition-speed: 0.3s; /* Скорость для CSS переходов */
+}
+
+/* 2. Переменные для темной темы (Сине-голубая палитра) */
+body.dark-theme {
+    /* Фоны */
+    --bg-color: #1a202c;
+    --container-bg: #2d3748;
+    --input-bg: #1a202c;
+    --today-bg: #2c5282; /* Темнее синий для сегодняшнего дня (кружок) */
+    --day-hover-bg: #4a5568;
+    --button-secondary-bg: #4a5568;
+    --button-secondary-hover-bg: #718096;
+    --progress-bar-outer-bg: #4a5568;
+    --filter-highlight-bg: #2c5282; /* Фон для выделения диапазона фильтра (темнее синий) */
+
+    /* Текст */
+    --text-color: #e2e8f0;
+    --secondary-text-color: #a0aec0;
+    --disabled-text-color: #718096;
+    --completed-text-color: #a0aec0;
+    --button-primary-text: #ffffff;
+    --button-secondary-text: #e2e8f0;
+    --selected-day-text: #ffffff;
+    --accent-contrast-text: #e0f2fe; /* Контрастный текст для фона диапазона (светло-голубой) */
+    --link-color: #63b3ed;
+
+    /* Границы */
+    --border-color: #4a5568;
+    --input-border: #718096;
+
+    /* Акцентные цвета (Светло-синий) */
+    --accent-color: #63b3ed;
+     --accent-color-translucent: rgba(99, 179, 237, 0.3); /* Для тени фокуса */
+    --button-primary-bg: #2b6cb0; /* Темно-синий для кнопок */
+    --button-primary-hover-bg: #3182ce;
+    --selected-day-bg: var(--accent-color); /* Светло-синий для выделенного дня (кружок) */
+    --has-tasks-dot-color: var(--accent-color);
+    --progress-bar-inner-bg: var(--accent-color);
+
+    /* Другие цвета */
+    --reminder-icon-color: #38bdf8;
+    --reminder-date-bg: #155e75; /* Темно-бирюзовый фон */
+    --reminder-date-text: #a5f3fc; /* Светлый текст */
+    --due-date-bg: #3b82f6; /* Синий фон для даты выполнения */
+    --due-date-text: #eff6ff; /* Очень светлый текст */
+    --completed-date-bg: #374151; /* Серый фон */
+    --completed-date-text: var(--disabled-text-color);
+    --star-color: #718096;
+    --starred-color: #facc15; /* Ярче желтый */
+    --delete-color: #fc8181;
+    --delete-hover-color: #f56565;
+
+    /* Тени, оверлеи, скроллбар */
+    --container-shadow: rgba(0, 0, 0, 0.3);
+    --modal-overlay-bg: rgba(0, 0, 0, 0.7);
+    --scrollbar-thumb-bg: #4a5568;
+    --scrollbar-track-bg: var(--bg-color);
+}
+
+/* 3. Базовые стили и использование переменных */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Layout */
+.main-container {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет переносить сайдбар вниз на маленьких экранах */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Пространство между todo-контейнером и сайдбаром */
+}
+.todo-container {
+    flex: 3; /* Занимает больше места */
+    min-width: 300px; /* Минимальная ширина */
+    background: var(--container-bg);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px var(--container-shadow);
+    transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+}
+.calendar-sidebar {
+    flex: 1; /* Занимает меньше места */
+    min-width: 280px;
+    background: var(--container-bg);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px var(--container-shadow);
+    height: fit-content; /* Высота по содержимому */
+    transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+/* В разделе календаря */
+.calendar-day.selecting {
+    background-color: rgba(99, 179, 237, 0.2) !important;
+}
+
+.calendar-day.range-selected {
+    background-color: var(--accent-color-translucent) !important;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: var(--text-color);
+    margin-top: 0;
+    transition: color var(--transition-speed) ease;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+h2 {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    transition: border-color var(--transition-speed) ease;
+}
+/* Убираем верхний отступ у первого h2 в todo-контейнере */
+.todo-container h2:first-of-type { margin-top: 0; }
+h3 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: var(--secondary-text-color);
+}
+
+/* --- Input Area --- */
+.input-area-wrapper {
+     margin-bottom: 15px; /* Отступ под полем ввода */
+}
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Пространство между элементами */
+}
+#taskInput {
+    flex-grow: 1; /* Занимает все доступное пространство */
+    padding: 12px 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 16px;
+    height: 46px; /* Фиксированная высота */
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.2s ease, background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    min-width: 50px; /* Чтобы не схлопывался */
+}
+#taskInput:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px var(--accent-color-translucent); /* Тень при фокусе */
+}
+.input-icon-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0; /* Не сжиматься */
+}
+.icon {
+    cursor: pointer;
+    font-size: 24px;
+    display: none; /* Скрыты по умолчанию */
+    color: var(--secondary-text-color);
+    user-select: none; /* Запретить выделение */
+    transition: color 0.2s ease, transform 0.2s ease;
+    line-height: 1;
+    padding: 5px; /* Увеличим область клика */
+    border-radius: 4px; /* Слегка скруглим */
+}
+.icon:hover {
+    color: var(--text-color);
+    transform: scale(1.1); /* Небольшое увеличение при наведении */
+    background-color: var(--day-hover-bg); /* Фон как у дней календаря */
+}
+.icon.visible { display: inline-block; } /* Показать иконку */
+.calendar-icon { /* Дополнительные стили не нужны */ }
+.reminder-icon { color: var(--reminder-icon-color); }
+.reminder-icon:hover { filter: brightness(1.2); } /* Немного ярче при наведении */
+
+#addTaskBtn {
+    padding: 0 18px;
+    height: 46px;
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    flex-shrink: 0;
+}
+#addTaskBtn:hover { background-color: var(--button-primary-hover-bg); }
+#addTaskBtn:active { transform: scale(0.98); } /* Эффект нажатия */
+
+.date-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px; /* Отступ сверху */
+    min-height: 20px; /* Чтобы контейнер не схлопывался */
+}
+.date-badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    display: none; /* Скрыты по умолчанию */
+    white-space: nowrap;
+    line-height: 1.4;
+    cursor: default;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+.date-badge.visible { display: inline-block; } /* Показываем, когда есть дата */
+/* Конкретные стили для бэджей */
+#selectedDateDisplay {
+    background: var(--due-date-bg);
+    color: var(--due-date-text);
+}
+#selectedReminderDisplay {
+    background: var(--reminder-date-bg);
+    color: var(--reminder-date-text);
+}
+/* --- Конец Input Area --- */
+
+/* Task Lists Header & Filter */
+.list-header {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет переносить фильтр вниз */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-right: 5px; /* Небольшой отступ справа */
+    gap: 10px;
+}
+.list-header h2 {
+    margin: 0;
+    border-bottom: none; /* Убираем границу у H2 в хедере */
+    font-size: 1.3em;
+    flex-shrink: 0; /* Не сжимать заголовок */
+}
+#taskFilterSelect {
+    padding: 6px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.2s ease, background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    max-width: 200px; /* Ограничим ширину */
+}
+#taskFilterSelect:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px var(--accent-color-translucent);
+}
+
+/* Task List & Items */
+.task-list {
+    margin-bottom: 20px;
+    min-height: 50px; /* Минимальная высота, чтобы было видно сообщение */
+}
+.task {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin: 8px 0; /* Вертикальные отступы между задачами */
+    background: var(--container-bg); /* Используем фон контейнера, т.к. он может отличаться от body */
+    border-radius: 8px;
+    box-shadow: 0 1px 3px var(--container-shadow);
+    transition: box-shadow 0.2s ease, background-color var(--transition-speed) ease, border-left-color 0.3s ease;
+    border-left: 4px solid transparent; /* Место для выделения (например, звездой) */
+    gap: 12px;
+}
+.task:hover { box-shadow: 0 2px 5px var(--container-shadow); }
+
+/* Выделение задачи звездой */
+.task.starred {
+    border-left-color: var(--starred-color);
+}
+
+/* Текст задачи (с обрезкой) */
+.task span:first-of-type { /* Стили для первого span - текста задачи */
+    flex-grow: 1;
+    cursor: pointer; /* Намекает на кликабельность (для деталей) */
+    /* Обрезка длинного текста: */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0; /* Важно для flex и text-overflow */
+}
+
+.completed-text {
+    text-decoration: line-through;
+    color: var(--completed-text-color);
+    /* Убираем обрезку для завершенных, если они могут быть длинными */
+    /* white-space: normal; */
+    /* text-overflow: clip; */
+}
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--input-border);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Не сжимать */
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    background-color: var(--input-bg); /* Фон чекбокса */
+    user-select: none; /* Запретить выделение */
+}
+.checkbox.checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--button-primary-text);
+    font-weight: bold;
+}
+.checkbox.checked::before {
+    content: '✓'; /* Галочка */
+    font-size: 14px;
+    line-height: 1;
+}
+
+/* Контейнер для дат и кнопок справа */
+.task-date-container {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Пространство между элементами внутри (датами, кнопками) */
+    margin-left: auto; /* Прижимает контейнер к правому краю */
+    flex-shrink: 0; /* Не сжиматься */
+    flex-wrap: nowrap; /* Запрещаем перенос внутри этого контейнера по умолчанию */
+}
+/* Обертка только для бэджей дат */
+.task-dates-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    flex-wrap: nowrap; /* Даты тоже не переносим */
+}
+.task-date-entry {
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Отступ между иконкой и текстом даты */
+    font-size: 11px;
+    background-color: var(--bg-color); /* Фон как у body */
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+    color: var(--secondary-text-color);
+    line-height: 1.3;
+    flex-shrink: 0;
+    border: 1px solid var(--border-color); /* Добавим легкую границу */
+}
+.task-date-entry .icon-date {
+    font-size: 10px;
+    line-height: 1;
+    margin-right: 1px;
+}
+/* Стили для бэджа напоминания */
+.task-date-entry.reminder-date {
+    background-color: var(--reminder-date-bg);
+    color: var(--reminder-date-text);
+    border-color: var(--reminder-date-text); /* Граница в цвет текста */
+}
+/* Стили для бэджа даты выполнения */
+#taskList .task-date-entry:not(.reminder-date) { /* Только в активном списке и не напоминание */
+    background-color: var(--due-date-bg);
+    color: var(--due-date-text);
+    border-color: var(--due-date-text);
+}
+
+
+/* Даты в завершенных задачах */
+#completedTaskList .task-dates-wrapper {
+    flex-direction: column; /* Даты друг под другом */
+    align-items: flex-end; /* Выравнивание по правому краю */
+    gap: 3px; /* Меньший отступ */
+}
+#completedTaskList .task-date-entry {
+    background-color: var(--completed-date-bg);
+    color: var(--completed-date-text);
+    opacity: 0.8; /* Слегка приглушим */
+    border-color: transparent; /* Уберем границу у завершенных */
+}
+body.dark-theme #completedTaskList .task-date-entry {
+    background-color: var(--input-bg); /* В темной теме фон чуть темнее */
+}
+/* Иконка в дате напоминания у завершенных */
+#completedTaskList .task-date-entry.reminder-date .icon-date {
+     color: var(--completed-date-text); /* Цвет как у текста */
+}
+
+/* Кнопки действий (звезда, корзина) */
+.action-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.3rem; /* Размер иконок */
+    cursor: pointer;
+    padding: 0 4px; /* Небольшие отступы по бокам */
+    flex-shrink: 0;
+    line-height: 1; /* Чтобы иконка не прыгала */
+    color: var(--secondary-text-color);
+    transition: color 0.2s ease, transform 0.1s ease;
+    border-radius: 4px;
+}
+.star-btn {
+    color: var(--star-color);
+    font-size: 1.5rem; /* Звезду чуть больше */
+}
+.star-btn.starred { color: var(--starred-color); }
+.delete-btn { color: var(--delete-color); }
+
+.action-btn:hover {
+    color: var(--text-color);
+    transform: scale(1.1); /* Увеличение при наведении */
+    background-color: var(--day-hover-bg);
+}
+.delete-btn:hover {
+    color: var(--delete-hover-color);
+    background-color: rgba(229, 62, 62, 0.1); /* Легкий красный фон при наведении */
+}
+.action-btn:active { transform: scale(0.95); } /* Эффект нажатия */
+
+
+/* Calendar Styles */
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    table-layout: fixed; /* Равные ячейки */
+    user-select: none; /* Запретить выделение текста в календаре */
+}
+.calendar th { /* Заголовки дней недели */
+    padding: 8px 5px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--secondary-text-color);
+    font-weight: normal;
+}
+.calendar td { /* Ячейка дня */
+    /* Убираем padding, т.к. фон будет у .calendar-day */
+    padding: 1px 0; /* Минимальный вертикальный отступ */
+    text-align: center;
+    vertical-align: middle;
+    height: 36px;
+    position: relative; /* Для позиционирования точки */
+}
+.calendar-day { /* Сам кружок/прямоугольник с числом */
+    display: flex; /* Центрирование числа */
+    justify-content: center;
+    align-items: center;
+    width: 32px;  /* Стандартный размер для кружка */
+    height: 32px;
+    margin: auto; /* Центрирование в ячейке */
+    font-size: 13px;
+    border-radius: 50%; /* По умолчанию круглый */
+    position: relative;
+    cursor: default; /* По умолчанию не кликабельно */
+    transition: background-color 0.2s ease, color 0.2s ease, border 0.2s ease, width 0.1s ease, border-radius 0.2s ease;
+    color: var(--text-color);
+    border: 1px solid transparent; /* Резервируем место для рамки */
+    z-index: 0; /* Базовый слой */
+}
+/* Кликабельные дни в модальных окнах */
+#datePickerCalendar .calendar-day,
+#reminderDatePickerCalendar .calendar-day {
+    cursor: pointer;
+}
+#datePickerCalendar .calendar-day:hover,
+#reminderDatePickerCalendar .calendar-day:hover {
+    background-color: var(--day-hover-bg);
+    border-color: var(--border-color);
+}
+/* Точка под датой, если есть активные задачи */
+.calendar-day.has-tasks::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background: var(--has-tasks-dot-color);
+    border-radius: 50%;
+    z-index: 2; /* Точка поверх фона диапазона */
+}
+/* Сегодняшний день */
+.calendar-day.today {
+    font-weight: bold;
+    /* Убираем фон отсюда, он может конфликтовать с range/selected */
+    /* background-color: var(--today-bg); */
+    border-color: var(--border-color);
+}
+/* Выбранный день */
+.calendar-day.selected {
+    background-color: var(--selected-day-bg);
+    color: var(--selected-day-text);
+    border-radius: 50%; /* КРУГЛЫЙ */
+    width: 32px;       /* Явно задаем размер кружка */
+    height: 32px;
+    border: 1px solid var(--selected-day-bg);
+    font-weight: bold;
+    position: relative; /* Поднимаем над фоном диапазона */
+    z-index: 1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.calendar-day.range-start,
+.calendar-day.range-end,
+.calendar-day.range-middle,
+.calendar-day.range-single {
+    background-color: var(--filter-highlight-bg);
+    color: var(--accent-contrast-text);
+    font-weight: bold;
+    width: 100%;
+    height: 32px;
+    border-radius: 0;
+    border: none;
+    z-index: 0;
+}
+
+
+.calendar-day.range-start {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+.calendar-day.range-end {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.calendar-day.range-single {
+    border-radius: 16px;
+}
+
+
+/* Если день 'today' попадает в диапазон, но не выбран */
+.calendar-day.range-start.today:not(.selected),
+.calendar-day.range-end.today:not(.selected),
+.calendar-day.range-middle.today:not(.selected),
+.calendar-day.range-single.today:not(.selected) {
+   /* Можно добавить легкое отличие, например, яркость */
+   /* filter: brightness(0.95); */
+}
+/* Точка для задач на фоне диапазона */
+.calendar-day.range-start.has-tasks::after,
+.calendar-day.range-end.has-tasks::after,
+.calendar-day.range-middle.has-tasks::after,
+.calendar-day.range-single.has-tasks::after {
+     background-color: var(--accent-contrast-text); /* Контрастный цвет точки */
+}
+/* Точка у выбранного дня (он поверх диапазона) */
+.calendar-day.selected.has-tasks::after {
+     background-color: var(--selected-day-text); /* Цвет текста выбранного дня */
+}
+/* Если день и выбран, и сегодня */
+.calendar-day.today.selected {
+    box-shadow: 0 0 0 2px var(--bg-color); /* Обводка цветом фона страницы */
+}
+/* --- Конец стилей диапазона --- */
+
+
+.calendar-header {
+    display: flex;
+    justify-content: center; /* Центрируем содержимое */
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative; /* Для позиционирования кнопок навигации */
+}
+.calendar-title {
+    font-weight: bold;
+    font-size: 15px;
+}
+.calendar-nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0 8px;
+    color: var(--link-color);
+    line-height: 1;
+    border-radius: 4px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+.calendar-nav-btn:hover {
+    color: var(--text-color);
+    background-color: var(--day-hover-bg);
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--modal-overlay-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Поверх всего */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+.modal:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+.modal-content {
+    background: var(--container-bg);
+    color: var(--text-color);
+    padding: 25px 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 380px; /* Макс ширина для календарей */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: scale(0.95);
+    transition: transform 0.3s ease, background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+.modal:not(.hidden) .modal-content {
+    transform: scale(1); /* Плавное появление */
+}
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.3em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+.time-picker-container {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    justify-content: center;
+    flex-direction: column; /* Разрешим перенос на мал. экранах */
+}
+.time-picker-container label {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+}
+.time-picker-container input[type="time"],
+.time-picker-container select { /* Стили и для select частоты */
+    padding: 6px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.2s ease, background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+.time-picker-container input[type="time"]:focus,
+.time-picker-container select:focus {
+     outline: none;
+     border-color: var(--accent-color);
+     box-shadow: 0 0 0 2px var(--accent-color-translucent);
+}
+.time-picker-container > div {
+    width: 100%;
+    margin-bottom: 10px;
+}
+/* Стиль для иконки часов в input[type=time] в темной теме */
+body.dark-theme .time-picker-container input[type="time"]::-webkit-calendar-picker-indicator {
+    background-color: var(--secondary-text-color); /* Цвет иконки */
+    border-radius: 2px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+body.dark-theme .time-picker-container input[type="time"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+.modal-buttons button {
+    padding: 9px 18px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+/* Вторичные кнопки (Отмена) */
+#cancelDateBtn, #cancelReminderDateBtn, #cancelEditTaskBtn {
+    background: var(--button-secondary-bg);
+    color: var(--button-secondary-text);
+    border-color: var(--border-color);
+}
+#cancelDateBtn:hover, #cancelReminderDateBtn:hover, #cancelEditTaskBtn:hover {
+    background: var(--button-secondary-hover-bg);
+    border-color: var(--secondary-text-color);
+}
+/* Основные кнопки (Сохранить) */
+#saveDateBtn, #saveReminderDateBtn, #saveEditTaskBtn {
+    background: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    border-color: var(--button-primary-bg);
+}
+#saveDateBtn:hover, #saveReminderDateBtn:hover, #saveEditTaskBtn:hover {
+    background: var(--button-primary-hover-bg);
+    border-color: var(--button-primary-hover-bg);
+}
+.modal-buttons button:active { transform: scale(0.98); }
+
+/* Task Details Modal Styles (Динамически создается JS) */
+#taskDetailsModal .modal-content {
+    max-width: 480px; /* Детали могут быть шире */
+}
+.task-detail-row {
+    margin-bottom: 18px;
+    position: relative; /* Для позиционирования иконок */
+}
+.task-detail-row label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--secondary-text-color);
+}
+.task-detail-input, .task-detail-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.2s ease, background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    font-family: inherit; /* Наследовать шрифт */
+}
+.task-detail-input:focus, .task-detail-textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px var(--accent-color-translucent);
+}
+.task-detail-textarea {
+    min-height: 80px;
+    resize: vertical; /* Разрешить изменять высоту */
+}
+/* Поля для дат и времени в деталях */
+.task-detail-row input[type="date"],
+.task-detail-row input[type="time"] {
+    width: calc(50% - 25px); /* Занимают почти половину, оставляя место для иконки */
+    display: inline-block; /* В одну строку */
+    margin-right: 8px;
+}
+/* Стили для select частоты в деталях */
+.task-detail-row select.task-detail-input {
+     width: auto; /* Ширина по контенту */
+     display: inline-block;
+     vertical-align: middle; /* Выровнять по вертикали с иконкой */
+     margin-right: 8px;
+}
+
+.task-detail-row input[type="time"] { margin-right: 0; } /* Убираем правый отступ у времени */
+
+/* Кнопки-иконки в деталях (Календарь, Напоминание) */
+.task-detail-row .icon-btn {
+    background: transparent;
+    border: none;
+    padding: 5px;
+    font-size: 1.4em;
+    cursor: pointer;
+    color: var(--secondary-text-color);
+    position: absolute;
+    right: 5px;
+    top: 35px; /* Положение относительно верха строки */
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+.task-detail-row .icon-btn:hover { color: var(--text-color); }
+
+/* Отключенные поля в деталях завершенной задачи */
+.task-detail-input:disabled, .task-detail-textarea:disabled,
+.task-detail-row select.task-detail-input:disabled {
+    background-color: var(--bg-color);
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* Theme Switcher Styles */
+.theme-switcher-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 25px 0; /* Отступы сверху/снизу */
+    padding: 12px;
+    background-color: var(--bg-color); /* Фон как у body */
+    border-radius: 8px;
+    transition: background-color var(--transition-speed) ease;
+}
+.theme-label {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    user-select: none;
+}
+.theme-switch { /* Контейнер переключателя */
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+.theme-switch input { opacity: 0; width: 0; height: 0; } /* Скрываем сам чекбокс */
+.slider { /* Видимая часть переключателя */
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc; /* Неактивный фон */
+    transition: .4s;
+    border-radius: 26px; /* Полностью скругленный */
+}
+.slider:before { /* Кружок-ползунок */
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider { background-color: var(--accent-color); } /* Активный фон */
+input:checked + .slider:before { transform: translateX(24px); } /* Сдвиг ползунка */
+
+/* Progress Bar Styles */
+.progress-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+.progress-section h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: var(--secondary-text-color);
+    font-weight: normal;
+}
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.progress-bar-outer {
+    flex-grow: 1;
+    height: 14px;
+    background-color: var(--progress-bar-outer-bg);
+    border-radius: 7px;
+    overflow: hidden; /* Скрыть выходящее за пределы */
+}
+.progress-bar-inner {
+    height: 100%;
+    width: 0%; /* Начальная ширина 0 */
+    background-color: var(--progress-bar-inner-bg);
+    border-radius: 7px;
+    transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1); /* Плавная анимация ширины */
+}
+.progress-percentage {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    min-width: 40px; /* Минимальная ширина для выравнивания */
+    text-align: right;
+}
+
+/* Сообщение для пустого списка */
+.empty-list-msg {
+    text-align: center;
+    color: var(--disabled-text-color);
+    margin-top: 20px;
+    font-style: italic;
+    padding: 10px;
+}
+
+/* Стили скроллбара (WebKit) */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track-bg); }
+::-webkit-scrollbar-thumb { background-color: var(--scrollbar-thumb-bg); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background-color: #a0aec0; }
+body.dark-theme ::-webkit-scrollbar-thumb { background-color: var(--scrollbar-thumb-bg); }
+body.dark-theme ::-webkit-scrollbar-thumb:hover { background-color: #718096; }
+/* Стили скроллбара (Firefox) */
+* { scrollbar-width: thin; scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg); }
+body.dark-theme * { scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg); }
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    /* На планшетах разрешаем перенос в контейнере дат/кнопок */
+    .task-date-container {
+        flex-wrap: wrap;
+        justify-content: flex-end; /* Выравнивание по правому краю при переносе */
+        gap: 4px 8px; /* Меньший вертикальный, больший горизонтальный отступ */
+    }
+}
+@media (max-width: 768px) { /* Планшеты и маленькие ноутбуки */
+    body { padding: 15px; }
+    .main-container { flex-direction: column; } /* Сайдбар под списком дел */
+    .todo-container, .calendar-sidebar { min-width: unset; padding: 20px; }
+    h1 { font-size: 1.8em; margin-bottom: 20px; }
+    h2 { font-size: 1.3em; margin-bottom: 15px; }
+    .input-container { gap: 6px; }
+    #taskInput { height: 44px; padding: 10px 12px;}
+    .input-icon-container { gap: 2px; }
+    .icon { font-size: 22px; padding: 4px; }
+    #addTaskBtn { height: 44px; padding: 0 15px; font-size: 15px;}
+    .date-badges-container { margin-top: 4px; gap: 6px; }
+    .date-badge { font-size: 10px; padding: 2px 6px; }
+    .task { gap: 8px; } /* Меньше отступ в задаче */
+    .task-date-container { gap: 6px; }
+    .calendar th, .calendar-day { font-size: 12px; }
+    .calendar-day { width: 30px; height: 30px; } /* Уменьшаем размер дня */
+    /* Адаптация скругления для диапазона */
+    .calendar-day.range-start, .calendar-day.range-end, .calendar-day.range-single { border-radius: 15px; height: 30px;}
+    .calendar-day.range-start { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+    .calendar-day.range-end { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+
+    .modal-content { padding: 20px; }
+    /* Поля дат/времени в деталях - адаптируем */
+    #taskDetailsModal .modal-content { max-width: 90%; }
+    #taskDetailsModal .task-detail-row input[type="date"],
+    #taskDetailsModal .task-detail-row input[type="time"] {
+        width: calc(50% - 5px); /* Уменьшаем немного */
+        display: inline-block;
+        margin-right: 8px;
+        margin-bottom: 8px; /* Отступ снизу */
+    }
+     /* Позиционирование иконки */
+    #taskDetailsModal .task-detail-row .icon-btn {
+        top: 30px; /* Поднимаем чуть выше */
+        right: 10px;
+    }
+    /* Select частоты в деталях */
+    #taskDetailsModal .task-detail-row select.task-detail-input {
+        width: calc(100% - 50px); /* Занимает почти всю строку рядом с иконкой */
+    }
+     #taskDetailsModal .task-detail-row .icon-btn[title*="напоминания"] {
+         top: auto; bottom: 5px; /* Перемещаем иконку напоминания вниз */
+     }
+}
+@media (max-width: 480px) { /* Телефоны */
+    h1 { font-size: 1.6em; }
+    h2 { font-size: 1.2em; }
+    /* Фильтр под заголовком */
+    .list-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    #taskFilterSelect {
+        margin-left: 0;
+        width: 100%; /* На всю ширину */
+        max-width: none;
+    }
+    /* Поле ввода перестраивается */
+    .input-container {
+        flex-wrap: wrap;
+    }
+    #taskInput { width: 100%; order: 1; } /* Поле ввода первое */
+    .input-icon-container { order: 2; margin-left: auto; } /* Иконки справа */
+    #addTaskBtn { width: 100%; order: 3; margin-top: 10px; } /* Кнопка снизу */
+    .date-badges-container { order: 4; width: 100%; } /* Бэджи под кнопкой */
+
+    .task { /* Задача */
+        flex-wrap: wrap; /* Разрешаем перенос */
+        gap: 8px;
+        padding: 10px 12px;
+    }
+    /* Текст задачи занимает почти всю ширину */
+    .task span:first-of-type {
+        width: calc(100% - 20px - 8px); /* Ширина минус чекбокс и gap */
+        order: 2; /* После чекбокса */
+        margin: 0;
+        white-space: normal; /* Разрешаем перенос текста */
+        overflow: visible;
+        text-overflow: clip;
+        cursor: default; /* Убираем курсор pointer на мобилке */
+    }
+    .checkbox { order: 1; /* Чекбокс первый */ }
+    /* Контейнер дат/кнопок под текстом */
+    .task-date-container {
+        width: 100%;
+        order: 3; /* После текста */
+        justify-content: space-between; /* Даты слева, кнопки справа */
+        margin-left: 0;
+        margin-top: 8px;
+        flex-wrap: wrap; /* Разрешаем перенос */
+        gap: 8px;
+    }
+    .task-dates-wrapper { /* Обертка дат */
+        margin-right: auto; /* Отодвигаем кнопки */
+        flex-wrap: wrap;
+        gap: 4px 6px;
+        order: 1; /* Даты слева */
+    }
+     /* Обертка для кнопок справа */
+     .task-date-container .action-btn {
+         order: 2; /* Кнопки справа */
+         margin-left: 4px; /* Небольшой отступ между кнопками */
+     }
+     .task-date-container .star-btn { order: 1; } /* Звезда перед корзиной */
+     .task-date-container .delete-btn { order: 2; }
+
+
+    /* Даты завершенных */
+    #completedTaskList .task-dates-wrapper {
+        margin-right: 0;
+        width: auto; /* Не на всю ширину */
+        align-items: flex-start; /* Выравнивание по левому краю */
+    }
+    #completedTaskList .task-date-container {
+        justify-content: space-between;
+    }
+
+
+    .calendar th, .calendar-day { font-size: 11px; }
+    .calendar-day { width: 28px; height: 28px; } /* Еще меньше */
+    /* Адаптация скругления диапазона */
+    .calendar-day.range-start, .calendar-day.range-end, .calendar-day.range-single { border-radius: 14px; height: 28px;}
+    .calendar-day.range-start { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+    .calendar-day.range-end { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+    /* Кнопки модального окна одна под другой */
+    .modal-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .modal-buttons button { width: 100%; }
+
+
+    /* Добавим в раздел календаря */
+.calendar-day.selecting {
+    background-color: rgba(99, 179, 237, 0.2) !important;
+}
+
+.calendar-day.range-selected {
+    background-color: var(--accent-color-translucent) !important;
+}
+
+.reset-btn {
+    padding: 5px 10px;
+    margin: 10px 0;
+    background: var(--button-secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+.reset-btn {
+    padding: 8px 15px;
+    margin: 15px 0;
+    background: var(--button-secondary-bg);
+    color: var(--button-secondary-text);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+.reset-btn:hover {
+    background: var(--button-secondary-hover-bg);
+}
+
+}
